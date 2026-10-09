@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 142" width="130" height="142">
+  <!-- Front layer of the nose head: rounded side wall, flared skirt and the near half of the rim. Same charcoal shading as the stem and main body renders. -->
+  <defs>
+    <linearGradient id="side" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#1c1c1c"/>
+      <stop offset="0.2" stop-color="#282828"/>
+      <stop offset="0.52" stop-color="#333333"/>
+      <stop offset="0.8" stop-color="#282828"/>
+      <stop offset="1" stop-color="#1b1b1b"/>
+    </linearGradient>
+    <linearGradient id="near" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#2a2a2a"/>
+      <stop offset="0.35" stop-color="#4a4a4a"/>
+      <stop offset="0.7" stop-color="#3b3b3b"/>
+      <stop offset="1" stop-color="#262626"/>
+    </linearGradient>
+    <linearGradient id="skirt" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#1e1e1e"/>
+      <stop offset="0.25" stop-color="#2a2a2a"/>
+      <stop offset="0.55" stop-color="#343434"/>
+      <stop offset="0.85" stop-color="#262626"/>
+      <stop offset="1" stop-color="#1c1c1c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- mid section and domed shoulder -->
+  <path d="M23 9 A42 6.5 0 0 0 107 9 C108.5 22 108 28 108 36 L108 108 C108 113 107 115 107 117 L23 117 C23 115 22 113 22 108 L22 36 C22 28 21.5 22 23 9 Z" fill="url(#side)"/>
+  <!-- flared skirt that sits over the thread ring of the main body -->
+  <path d="M22 112 C22 116 5.5 114 5.5 121 L5.5 135 Q5.5 142 12 142 L118 142 Q124.5 142 124.5 135 L124.5 121 C124.5 114 108 116 108 112 Z" fill="url(#skirt)"/>
+  <!-- soft seam where the skirt flares out -->
+  <path d="M22 112.5 C22 116 5.5 114 5.5 121" fill="none" stroke="#0e0e0e" stroke-opacity="0.55" stroke-width="1"/>
+  <path d="M108 112.5 C108 116 124.5 114 124.5 121" fill="none" stroke="#0e0e0e" stroke-opacity="0.55" stroke-width="1"/>
+  <!-- near half of the rim, lit top face -->
+  <path d="M23 9 A42 6.5 0 0 0 107 9 L98 9 A33 5 0 0 1 32 9 Z" fill="url(#near)"/>
+  <!-- long soft specular streak down the left of the wall, like the CAD renders -->
+  <rect x="38" y="30" width="3.2" height="74" rx="1.6" fill="#ffffff" opacity="0.05"/>
+</svg>

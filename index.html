@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.className = "js";</script>
+
+  <title>Instaclot | Stop nosebleeds faster than ever</title>
+  <meta name="description" content="Instaclot is a reusable handheld device that delivers a vasoconstricting agent and an absorbent element to a nosebleed in a single push.">
+  <meta name="theme-color" content="#0b2645">
+
+  <!-- Social previews need absolute URLs. SITE_URL: https://bwscampus.github.io/instaclot/ is the default GitHub Pages address.
+       Replace it with the custom domain once it is confirmed. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Instaclot">
+  <meta property="og:title" content="Instaclot | Stop nosebleeds faster than ever">
+  <meta property="og:description" content="Instaclot is a reusable handheld device that delivers a vasoconstricting agent and an absorbent element to a nosebleed in a single push.">
+  <meta property="og:url" content="https://bwscampus.github.io/instaclot/">
+  <meta property="og:image" content="https://bwscampus.github.io/instaclot/assets/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Instaclot device with its cotton pushed out of the nose head, next to the words Stop nosebleeds faster than ever.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Instaclot | Stop nosebleeds faster than ever">
+  <meta name="twitter:description" content="Instaclot is a reusable handheld device that delivers a vasoconstricting agent and an absorbent element to a nosebleed in a single push.">
+  <meta name="twitter:image" content="https://bwscampus.github.io/instaclot/assets/images/og-image.png">
+
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <link rel="preload" href="assets/fonts/made-tommy-soft-medium.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="assets/fonts/roboto-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css?v=12">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Drop icon and check/X marks used by the page -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-check" viewBox="0 0 32 32"><path d="M5 17l7 7L27 8"/></symbol>
+    <symbol id="i-x" viewBox="0 0 32 32"><path d="M7 7l18 18M25 7L7 25"/></symbol>
+  </svg>
+
+  <!-- ===== Top bar (every page) ===== -->
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="logo" href="index.html" aria-label="Instaclot, home">
+        <span aria-hidden="true"><span class="logo__i">&#305;<svg class="logo__drop" viewBox="0 0 24 36" focusable="false"><path d="M12 1C12 1 3 15 3 25a9 9 0 0 0 18 0C21 15 12 1 12 1Z"/></svg></span>nstaclot</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Section 1: Hero ===== -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero__stage">
+        <div class="hero__backdrop" aria-hidden="true"></div>
+
+        <div class="hero__grid">
+          <div class="hero__text">
+            <div class="hero__titlebox">
+              <h1 id="hero-title" class="hero__title"><span>Stop Nosebleeds</span> <span>Faster Than Ever</span></h1>
+            </div>
+            <div class="hero__copy">
+              <p class="hero__lede">Instaclot is a reusable handheld device that delivers a vasoconstricting agent and an absorbent element to a nosebleed in a single push.</p>
+              <p class="patent hero__patent"><span class="patent__dot" aria-hidden="true"></span>Patent pending</p>
+              <div class="hero__actions">
+                <a class="btn btn--outline" href="story.html" data-hero-nav>Hear Our Story</a>
+                <a class="btn btn--primary" href="#how-it-works" data-hero-nav>See how it works</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__device">
+            <!-- One shared coordinate system keeps every seam aligned at any screen size.
+                 Layers back to front: soft shadow, stem, main body, nose head (back), cotton, nose head (front).
+                 Only the stem group and the cotton group move; both are driven by js/main.js from one scroll value.
+                 Parts: stem.png and body.png are the new rounded renders (Updated Stem 2 + Updated Main Body 1, straight-on views).
+                 nosehead-back/front.svg and cotton.svg are drawn to match them; swap in real renders with the same names and sizes. -->
+            <svg class="hero__svg" viewBox="0 0 260 1340" role="img" aria-labelledby="stage-title stage-desc" focusable="false">
+              <title id="stage-title">The Instaclot device</title>
+              <desc id="stage-desc">The stem pushes up into the main body while the cotton pushes out of the top of the nose head as you scroll.</desc>
+              <defs>
+                <clipPath id="cotton-clip"><rect x="0" y="0" width="260" height="340"/></clipPath>
+                <filter id="soft-blur" x="-30%" y="-300%" width="160%" height="700%"><feGaussianBlur stdDeviation="13"/></filter>
+              </defs>
+              <ellipse cx="130" cy="1306" rx="112" ry="15" fill="#0b2645" opacity="0.18" filter="url(#soft-blur)"/>
+              <g id="stem-g" transform="translate(0 316)">
+                <image href="assets/images/hero/stem.png" x="31" y="446" width="199" height="515"/>
+              </g>
+              <image href="assets/images/hero/body.png" x="31" y="380" width="199" height="547"/>
+              <image href="assets/images/hero/nosehead-back.svg" x="65" y="260" width="130" height="142"/>
+              <g clip-path="url(#cotton-clip)">
+                <g id="cotton-g" transform="translate(0 0) translate(130 330) scale(1) translate(-130 -330)">
+                  <image href="assets/images/hero/cotton.svg" x="94" y="275" width="72" height="214"/>
+                </g>
+              </g>
+              <image href="assets/images/hero/nosehead-front.svg" x="65" y="260" width="130" height="142"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Section 2: How it works ===== -->
+    <section id="how-it-works" class="section how" aria-labelledby="how-title">
+      <div class="container">
+        <h2 id="how-title" class="section-title">How it works</h2>
+        <p class="section-lede">Have it ready for when you get a nosebleed!</p>
+
+        <div class="steps">
+          <div class="step-group step-group--prepare">
+            <h3 class="step-group__label">Prepare</h3>
+            <ol class="step-group__list" start="1">
+              <li class="step-card">
+                <span class="step-card__num" aria-hidden="true">1</span>
+                <h4 class="step-card__title"><span class="visually-hidden">Step 1: </span>Load the cartridge</h4>
+                <p class="step-card__text">Drop the cartridge into the main body and screw on the nose head.</p>
+                <div class="step-card__art"><img src="assets/images/steps/step-1.svg?v=3" alt="Drawing: the nose head twists on to the right (Twist right), and the cartridge, a plain white cylinder, drops down into the main body (Drop in)." width="190" height="520" loading="lazy"></div>
+              </li>
+              <li class="step-card">
+                <span class="step-card__num" aria-hidden="true">2</span>
+                <h4 class="step-card__title"><span class="visually-hidden">Step 2: </span>Lock the stem</h4>
+                <p class="step-card__text">Insert the cotton from the bottom. Then insert the stem, twist it to the right, and pull it down. Instaclot is now locked.</p>
+                <div class="step-card__art"><img src="assets/images/steps/step-2.svg?v=3" alt="Drawing in two parts: first the cotton is pushed up into the main body from the bottom (Push up). Then the stem, shown in three frames: 1 Push up, 2 Twist right, 3 Pull down, ending with the device locked." width="230" height="520" loading="lazy"></div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="step-group step-group--use">
+            <h3 class="step-group__label">Use</h3>
+            <ol class="step-group__list" start="3">
+              <li class="step-card step-card--wide">
+                <span class="step-card__num" aria-hidden="true">3</span>
+                <h4 class="step-card__title"><span class="visually-hidden">Step 3: </span>Place, push, pinch and hold</h4>
+                <p class="step-card__text">When you get a nosebleed, push the stem up, twist the stem to the left, insert the nose head into your nose, and push the stem up. Gently pinch the nose to release the constricting element from the cotton, and wait 5 minutes before removing the cotton.</p>
+                <div class="step-card__art"><img src="assets/images/steps/step-3.svg?v=3" alt="Drawing: Instaclot points up at the left nostril of a see-through nose, with the cotton just inside. An arrow under the stem shows Push up (1). Two arrows push in from both sides of the nose, labeled Pinch (2)." width="290" height="520" loading="lazy"></div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="step-group step-group--clean">
+            <h3 class="step-group__label">Clean</h3>
+            <ol class="step-group__list" start="4">
+              <li class="step-card">
+                <span class="step-card__num" aria-hidden="true">4</span>
+                <h4 class="step-card__title"><span class="visually-hidden">Step 4: </span>Rinse all three parts</h4>
+                <p class="step-card__text">Wash everything off and repeat steps 1 and 2 so you are prepared for your next nosebleed.</p>
+                <div class="step-card__art"><img src="assets/images/steps/step-4.svg?v=3" alt="Drawing: a faucet rinses the nose head, the main body and the stem." width="190" height="520" loading="lazy"></div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Section 3: What it solves ===== -->
+    <section id="what-it-solves" class="section solves" aria-labelledby="solves-title">
+      <div class="container">
+        <h2 id="solves-title" class="section-title">What it solves</h2>
+
+        <ul class="chips">
+          <li class="chips__label">Most common causes:</li>
+          <li class="chip">Dry air</li>
+          <li class="chip">Hits to the face</li>
+          <li class="chip">Picking/rubbing</li>
+          <li class="chip">Allergies</li>
+          <li class="chip">Blood thinners</li>
+        </ul>
+
+        <!-- Rows below are from the hand sketch (Hands free, Clotting agent, No mess, Highly absorbent). -->
+        <!-- Wide screens: comparison grid -->
+        <div class="compare compare--table">
+          <table class="compare-table">
+            <caption class="visually-hidden">Pinching, tissues and Instaclot compared. A check means yes, an X means no.</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col"><div class="compare-head"><img class="kid" src="assets/images/solves/kid-pinch.webp" alt="A boy pinching his nose with a bloody tissue." width="330" height="444" loading="lazy"><span class="compare-head__name">Pinch</span></div></th>
+                <th scope="col"><div class="compare-head"><img class="kid" src="assets/images/solves/girl-tissue.webp" alt="A girl with a bloody tissue in her nose." width="427" height="444" loading="lazy"><span class="compare-head__name">Tissues</span></div></th>
+                <th scope="col" class="col-instaclot"><div class="compare-head"><img src="assets/images/solves/solves-instaclot.svg?v=3" alt="The Instaclot device." width="240" height="180" loading="lazy"><span class="compare-head__name">Instaclot</span></div></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Hands free</th>
+                <td><span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></td>
+                <td><span class="mark mark--yes"><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span class="visually-hidden">Yes</span></span></td>
+                <td class="col-instaclot"><span class="mark mark--yes"><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span class="visually-hidden">Yes</span></span></td>
+              </tr>
+              <tr>
+                <th scope="row">Clotting agent</th>
+                <td><span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></td>
+                <td><span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></td>
+                <td class="col-instaclot"><span class="mark mark--yes"><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span class="visually-hidden">Yes</span></span></td>
+              </tr>
+              <tr>
+                <th scope="row">No mess</th>
+                <td><span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></td>
+                <td><span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></td>
+                <td class="col-instaclot"><span class="mark mark--yes"><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span class="visually-hidden">Yes</span></span></td>
+              </tr>
+              <tr>
+                <th scope="row">Highly absorbent</th>
+                <td><span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></td>
+                <td><span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></td>
+                <td class="col-instaclot"><span class="mark mark--yes"><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span class="visually-hidden">Yes</span></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Phones: three stacked cards -->
+        <div class="compare compare--cards">
+          <article class="compare-card">
+            <img class="kid" src="assets/images/solves/kid-pinch.webp" alt="A boy pinching his nose with a bloody tissue." width="330" height="444" loading="lazy">
+            <h3>Pinch</h3>
+            <ul>
+              <li>Hands free <span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></li>
+              <li>Clotting agent <span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></li>
+              <li>No mess <span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></li>
+              <li>Highly absorbent <span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></li>
+            </ul>
+          </article>
+          <article class="compare-card">
+            <img class="kid" src="assets/images/solves/girl-tissue.webp" alt="A girl with a bloody tissue in her nose." width="427" height="444" loading="lazy">
+            <h3>Tissues</h3>
+            <ul>
+              <li>Hands free <span class="mark mark--yes"><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span class="visually-hidden">Yes</span></span></li>
+              <li>Clotting agent <span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></li>
+              <li>No mess <span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></li>
+              <li>Highly absorbent <span class="mark mark--no"><svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg><span class="visually-hidden">No</span></span></li>
+            </ul>
+          </article>
+          <article class="compare-card compare-card--highlight">
+            <img src="assets/images/solves/solves-instaclot.svg?v=3" alt="The Instaclot device." width="240" height="180" loading="lazy">
+            <h3>Instaclot</h3>
+            <ul>
+              <li>Hands free <span class="mark mark--yes"><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span class="visually-hidden">Yes</span></span></li>
+              <li>Clotting agent <span class="mark mark--yes"><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span class="visually-hidden">Yes</span></span></li>
+              <li>No mess <span class="mark mark--yes"><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span class="visually-hidden">Yes</span></span></li>
+              <li>Highly absorbent <span class="mark mark--yes"><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span class="visually-hidden">Yes</span></span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Section 4: Get updates ===== -->
+    <section id="get-updates" class="section updates" aria-labelledby="updates-title">
+      <div class="container updates__grid">
+        <div>
+          <h2 id="updates-title" class="section-title">Get updates</h2>
+          <p class="updates__helper">Interested in a sample? Want new news? Give us your info and we'll get back to you.</p>
+        </div>
+
+        <div class="form-card">
+          <form id="updates-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label class="field__label" for="name">Name</label>
+                <input class="field__input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+                <p class="field__error" id="name-error" hidden>Please enter your name.</p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="email">Email</label>
+                <input class="field__input" id="email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error">
+                <p class="field__error" id="email-error" hidden>Please enter a valid email address.</p>
+              </div>
+            </div>
+            <!-- Spam trap: real visitors never see or fill this field -->
+            <div class="hp" aria-hidden="true">
+              <label>Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+            </div>
+            <button class="btn btn--primary" type="submit" id="join-btn">Join</button>
+            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Section 5: Footer (every page) ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a class="logo logo--dark logo--small" href="index.html" aria-label="Instaclot, home">
+          <span aria-hidden="true"><span class="logo__i">&#305;<svg class="logo__drop" viewBox="0 0 24 36" focusable="false"><path d="M12 1C12 1 3 15 3 25a9 9 0 0 0 18 0C21 15 12 1 12 1Z"/></svg></span>nstaclot</span>
+        </a>
+        <p class="patent"><span class="patent__dot" aria-hidden="true"></span>Patent pending</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <ul>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="#get-updates">Get updates</a></li>
+        </ul>
+      </nav>
+      <!-- Decorative sketch of the device: not a link, not a button, hidden from screen readers -->
+      <div class="footer__sketch" aria-hidden="true">
+        <img src="assets/images/footer-device.svg" alt="" width="30" height="128" loading="lazy">
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=4" defer></script>
+  <script src="js/form.js?v=3" defer></script>
+</body>
+</html>

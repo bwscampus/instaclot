@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 142" width="130" height="142">
+  <!-- Back layer of the nose head: top face of the rim and the dark opening. The cotton is drawn on top of this layer and under nosehead-front.svg. -->
+  <defs>
+    <linearGradient id="rim" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#262626"/>
+      <stop offset="0.35" stop-color="#454545"/>
+      <stop offset="0.7" stop-color="#383838"/>
+      <stop offset="1" stop-color="#232323"/>
+    </linearGradient>
+    <linearGradient id="hole" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#050505"/>
+      <stop offset="1" stop-color="#1c1c1c"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="65" cy="9" rx="42" ry="6.5" fill="url(#rim)"/>
+  <ellipse cx="65" cy="9" rx="33" ry="5" fill="url(#hole)"/>
+</svg>
