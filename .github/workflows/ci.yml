@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    # Production Standard DB-2/DB-6/DB-9: migrations apply on real Postgres, the app role can
+    # read and write rows but run no DDL, and stored signups are ciphertext.
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: instaclot
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready --health-interval 5s
+          --health-timeout 5s --health-retries 10
+    env:
+      MIGRATION_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/instaclot
+      APP_DATABASE_URL: postgresql://app_rw_login:ci-app-password@localhost:5432/instaclot
+      APP_DB_PASSWORD: ci-app-password
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      # OPS-1/OPS-2: fail on known high-severity vulnerabilities in shipped deps.
+      - run: npm audit --omit=dev --audit-level=high
+      - run: npm test

@@ -1,7 +1,6 @@
-// Paste the form service address here (Formspree or similar), for example
-// "https://formspree.io/f/yourFormId". While this is empty the form shows
-// "Sign up is not connected yet." and sends nothing.
-const FORM_ENDPOINT = "";
+// The waitlist API (server/app.mjs), served from the same site. While this is empty the
+// form shows "Sign up is not connected yet." and sends nothing.
+const FORM_ENDPOINT = "/api/waitlist";
 
 (function () {
   "use strict";
@@ -80,16 +79,23 @@ const FORM_ENDPOINT = "";
 
     fetch(FORM_ENDPOINT, {
       method: "POST",
-      headers: { "Accept": "application/json" },
-      body: new FormData(form)
+      headers: { "Accept": "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        _gotcha: trap ? trap.value : ""
+      })
     }).then(function (response) {
+      if (response.status === 429) { throw new Error("rate-limited"); }
       if (!response.ok) { throw new Error("HTTP " + response.status); }
       showSuccess();
-    }).catch(function () {
+    }).catch(function (error) {
       button.disabled = false;
       button.removeAttribute("aria-busy");
       button.textContent = buttonLabel;
-      showMessage("Something went wrong and your info was not sent. Please try again.", true);
+      showMessage(error.message === "rate-limited"
+        ? "Too many sign ups from this connection. Please try again later."
+        : "Something went wrong and your info was not sent. Please try again.", true);
     });
   });
 })();
